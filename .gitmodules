@@ -1,0 +1,15 @@
+[submodule "1-MusicPlayer/AudioPlayer-tutorial"]
+	path = 1-MusicPlayer/AudioPlayer-tutorial
+	url = https://github.com/san-ghun/AudioPlayer-tutorial
+[submodule "2-SignUp/SignUpPage-tutorial"]
+	path = 2-SignUp/SignUpPage-tutorial
+	url = https://github.com/san-ghun/SignUpPage-tutorial
+[submodule "2-SignUp/UIImagePickerController-tutorial"]
+	path = 2-SignUp/UIImagePickerController-tutorial
+	url = https://github.com/san-ghun/UIImagePickerController-tutorial
+[submodule "2-SignUp/DatePicker-tutorial"]
+	path = 2-SignUp/DatePicker-tutorial
+	url = https://github.com/san-ghun/DatePicker-tutorial
+[submodule "2-SignUp/TapGesture-tutorial"]
+	path = 2-SignUp/TapGesture-tutorial
+	url = https://github.com/san-ghun/TapGesture-tutorial
