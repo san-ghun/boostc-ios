@@ -10,14 +10,21 @@ import UIKit
 class SignUpSecondViewController: UIViewController {
 
     // MARK: - Properties
+    // TODO: let dateFormatter: DateFormatter = {}
     
     // MARK: IBOutlets
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.addViewWithCode()
     }
     
 
@@ -36,7 +43,31 @@ class SignUpSecondViewController: UIViewController {
     // MARK: Custom Methods
     
     // MARK: IBActions
+    // TODO: @IBAction func didDatePickerValueChanged
+    // TODO: @IBAction func didTappedCancelButton
+    // TODO: @IBAction func didTappedNextButton
+    // TODO: @IBAction func tapView
     
     // MARK: View with code
+    func addViewWithCode() {
+        self.addPhoneNumberLabel()
+        self.addPhoneNumberTextField()
+        self.addDateLabel()
+        self.addDatePicker()
+    }
+    
+    func addPhoneNumberLabel() {
+        
+    }
+    func addPhoneNumberTextField() {
+        
+    }
+    func addDateLabel() {
+        
+    }
+    func addDatePicker() {
+        
+    }
+    
     
 }

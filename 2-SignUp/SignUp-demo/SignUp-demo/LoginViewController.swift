@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.addViewWithCode()
     }
 
 
@@ -30,9 +32,41 @@ class LoginViewController: UIViewController {
     // MARK: Custom Methods
     
     // MARK: IBActions
+    @IBAction func touchUpSignUpButton() {
+        let rootVC = SignUpFirstViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true, completion: nil)
+    }
     
     // MARK: View with code
+    func addViewWithCode() {
+        self.addTitleImageView()
+        self.addIdTextField()
+        self.addPwdTextField()
+        self.addSignInButton()
+        self.addSignUpButton()
+    }
     
+    func addTitleImageView() {
+        
+    }
+    
+    func addIdTextField() {
+        
+    }
+    
+    func addPwdTextField() {
+        
+    }
+    
+    func addSignInButton() {
+        
+    }
+    
+    func addSignUpButton() {
+        
+    }
     
 }
 
