@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.addViewWithCode()
+        self.addKeyboardNotification()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapView))
         self.view.addGestureRecognizer(tapGesture)
@@ -33,6 +34,20 @@ class LoginViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: Custom Methods
+    func addKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        self.view.frame.origin.y -= 100
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        self.view.frame.origin.y += 100
+    }
+
     
     // MARK: IBActions
     @IBAction func touchUpSignUpButton() {
