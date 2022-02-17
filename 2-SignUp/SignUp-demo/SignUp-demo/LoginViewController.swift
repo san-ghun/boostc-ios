@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.addViewWithCode()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapView))
+        self.view.addGestureRecognizer(tapGesture)
     }
 
 
@@ -37,6 +40,10 @@ class LoginViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapView(_ sender: Any) {
+        view.endEditing(true)
     }
     
     // MARK: View with code
