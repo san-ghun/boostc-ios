@@ -43,6 +43,10 @@ class SignUpSecondViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
         
         self.datePicker.addTarget(self, action: #selector(self.didDatePickerValueChanged(_:)), for: UIControl.Event.valueChanged)
+        
+        self.phoneNumberTextField.addTarget(self, action: #selector(editingChanged(_:)), for: UIControl.Event.editingChanged)
+        
+        setRegisterButtonState()
     }
     
 
@@ -59,6 +63,30 @@ class SignUpSecondViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: Custom Methods
+    func validateFields() -> Bool {
+        // check that all fields are filled in
+        if phoneNumberTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            datePickerLabel.text?.trimmingCharacters(in: .whitespacesAndNewlines) == nil {
+            
+            return false
+        }
+        
+        return true
+    }
+    
+    func setRegisterButtonState() {
+        
+        let state: Bool = validateFields()
+        
+        if state {
+            self.registerButton.setTitleColor(UIColor.blue, for: .normal)
+        }
+        else {
+            self.registerButton.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        
+        self.registerButton.isEnabled = state
+    }
     
     // MARK: IBActions
     @IBAction func didDatePickerValueChanged(_ sender: UIDatePicker) {
@@ -66,6 +94,8 @@ class SignUpSecondViewController: UIViewController {
         let dateString: String = self.dateFormatter.string(from: date)
         
         self.datePickerLabel.text = dateString
+        
+        setRegisterButtonState()
     }
     
     @IBAction func didTappedCancelButton() {
@@ -90,6 +120,16 @@ class SignUpSecondViewController: UIViewController {
     
     @IBAction func tapView(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        setRegisterButtonState()
     }
     
     // MARK: View with code
