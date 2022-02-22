@@ -9,10 +9,6 @@ import Foundation
 import UIKit
 
 class SignUpFirstViewController: UIViewController, UINavigationControllerDelegate {
-    
-    // TODO: add property to store id pwd discription
-    // TODO: add method to check and validate id pwd
-    // TODO: add method to check that form is valid to activate next button
 
     // MARK: - Properties
     lazy var imagePicker: UIImagePickerController = {
@@ -51,6 +47,14 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapView))
         self.view.addGestureRecognizer(tapGesture)
+        
+        [idTextField, pwdTextField, secondPwdTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged) })
+        
+        self.idTextField.delegate = self
+        self.pwdTextField.delegate = self
+        self.secondPwdTextField.delegate = self
+        
+        self.setNextButtonState()
     }
     
 
@@ -69,6 +73,51 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
     // MARK: Custom Methods
     func presentImagePicker() {
         self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    func isPasswordValid(_ password: String) -> Bool {
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
+    
+    func validateFields() -> Bool {
+        // check that all fields are filled in
+        if idTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            pwdTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            secondPwdTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return false
+        }
+        
+        // check if the password is secure
+        let cleanedPassword = pwdTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedSecondPassword = secondPwdTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        /*
+        if isPasswordValid(cleanedPassword) == false {
+            return false
+        }
+         */
+        
+        if cleanedPassword != cleanedSecondPassword {
+            return false
+        }
+        
+        return true
+    }
+    
+    func setNextButtonState() {
+        
+        let state: Bool = validateFields()
+        
+        if state {
+            self.nextButton.setTitleColor(UIColor.blue, for: .normal)
+        }
+        else {
+            self.nextButton.setTitleColor(UIColor.lightGray, for: .normal)
+        }
+        
+        self.nextButton.isEnabled = state
     }
     
     // MARK: IBActions
@@ -93,6 +142,16 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func tapView(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        setNextButtonState()
     }
     
     // MARK: View with code
@@ -300,5 +359,13 @@ extension SignUpFirstViewController: UIImagePickerControllerDelegate {
         }
         self.profileImageView.image = newImage
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SignUpFirstViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
