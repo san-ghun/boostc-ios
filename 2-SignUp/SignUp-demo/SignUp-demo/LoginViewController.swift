@@ -28,6 +28,27 @@ class LoginViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapView))
         self.view.addGestureRecognizer(tapGesture)
+        
+        self.idTextField.delegate = self
+        self.pwdTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /*
+        if UserInformation.shared.username != nil {
+            self.idTextField.text = UserInformation.shared.username
+        }
+        */
+        
+        if let username: String = UserInformation.shared.username {
+            self.idTextField.text = username
+        }
+        else {
+            self.idTextField.text = ""
+        }
+        
+        self.pwdTextField.text = ""
     }
 
 
@@ -180,3 +201,10 @@ class LoginViewController: UIViewController {
     
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}
