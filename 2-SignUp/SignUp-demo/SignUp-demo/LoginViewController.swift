@@ -29,6 +29,23 @@ class LoginViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapView))
         self.view.addGestureRecognizer(tapGesture)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        /*
+        if UserInformation.shared.username != nil {
+            self.idTextField.text = UserInformation.shared.username
+        }
+        */
+        
+        if let username: String = UserInformation.shared.username {
+            self.idTextField.text = username
+        }
+        else {
+            self.idTextField.text = ""
+        }
+    }
 
 
     // MARK: - Methods

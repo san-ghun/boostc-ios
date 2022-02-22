@@ -77,7 +77,15 @@ class SignUpSecondViewController: UIViewController {
     }
     
     @IBAction func didTappedRegisterButton() {
-        // TODO: didTappedRegisterButton
+        userInfo.username = tempUserInfo.username
+        userInfo.password = tempUserInfo.password
+        userInfo.profileImage = tempUserInfo.profileImage
+        userInfo.description = tempUserInfo.description
+
+        userInfo.phoneNumber = self.phoneNumberTextField.text
+        userInfo.dateOfBirth = self.datePickerLabel.text
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapView(_ sender: Any) {
