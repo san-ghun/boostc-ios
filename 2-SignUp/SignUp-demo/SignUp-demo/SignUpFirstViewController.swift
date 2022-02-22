@@ -19,6 +19,7 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
         let picker: UIImagePickerController = UIImagePickerController()
         picker.sourceType = .savedPhotosAlbum
         picker.delegate = self
+        picker.allowsEditing = true
         return picker
     }()
     
@@ -290,9 +291,14 @@ extension SignUpFirstViewController: UIImagePickerControllerDelegate {
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let originalImage: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.profileImageView.image = originalImage
+        var newImage: UIImage? = nil
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = image
         }
+        else if let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = image
+        }
+        self.profileImageView.image = newImage
         self.dismiss(animated: true, completion: nil)
     }
 }
