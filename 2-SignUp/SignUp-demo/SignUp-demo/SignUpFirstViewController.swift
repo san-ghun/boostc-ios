@@ -22,6 +22,8 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
         return picker
     }()
     
+    var tempUserInfo = TempUserInformation()
+    
     // MARK: IBOutlets
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var idTextField: UITextField!
@@ -78,7 +80,13 @@ class SignUpFirstViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func didTappedNextButton() {
+        tempUserInfo.username = self.idTextField.text ?? ""
+        tempUserInfo.password = self.pwdTextField.text ?? ""
+        tempUserInfo.description = self.descriptionTextView.text ?? ""
+        tempUserInfo.profileImage = self.profileImageView.image?.pngData() ?? Data()
+        
         let vc = SignUpSecondViewController()
+        vc.tempUserInfo = self.tempUserInfo
         navigationController?.pushViewController(vc, animated: true)
     }
     

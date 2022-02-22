@@ -16,6 +16,9 @@ class SignUpSecondViewController: UIViewController {
         return formatter
     }()
     
+    var tempUserInfo = TempUserInformation()
+    var userInfo = UserInformation.shared
+    
     // MARK: IBOutlets
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!

@@ -26,3 +26,16 @@ class UserInformation {
     
     // MARK: - Methods
 }
+
+class TempUserInformation {
+    
+    // Properties
+    var username: String = ""
+    var password: String = ""
+    var profileImage: Data = Data()
+    var description: String = ""
+    
+    deinit {
+        print("deinit TempUser")
+    }
+}
