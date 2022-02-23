@@ -14,7 +14,21 @@ class ViewController: UIViewController {
     
     let korean: [String] = ["가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하"]
     let english: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    var dates: [Date] = []
+    
+    let dateFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
 
+    @IBAction func touchUpAddButton(_ sender: UIButton) {
+        dates.append(Date())
+        
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,7 +43,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +52,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return korean.count
         case 1:
             return english.count
+        case 2:
+            return dates.count
         default:
             return 0
         }
@@ -48,7 +64,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
         var content = cell.defaultContentConfiguration()
-        content.text = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
+        if indexPath.section < 2 {
+            content.text = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
+        }
+        else {
+            content.text = self.dateFormatter.string(from: self.dates[indexPath.row])
+        }
         
         cell.contentConfiguration = content
         
@@ -57,6 +78,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return section == 0 ? "한글" : "English"
+        if section < 2 {
+            return section == 0 ? "한글" : "English"
+        }
+        return nil
     }
 }
