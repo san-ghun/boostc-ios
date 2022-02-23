@@ -77,6 +77,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             content.text = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
             
+            // To see how dequeueReusableCell works
+            if indexPath.row == 1 {
+                cell.backgroundColor = UIColor.red
+            }
+            else {
+                cell.backgroundColor = UIColor.white
+            }
+            
             cell.contentConfiguration = content
             
             return cell
