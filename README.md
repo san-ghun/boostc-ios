@@ -8,8 +8,10 @@
 
 Build a basic audio file player application with `AVAudioPlayer` class in `AVFoundation` framework.
 
-tags: `Xcode`, `Storyboard`, `UIKit`, `UILabel`, `UIButton`, `UISlider`, `AVFoundation`, `AVAudioPlayer`, `Auto Layout`, `Design Pattern`, `Model-View-Controller Pattern`, `MVC`, `IBOutlet`, `IBAction`, `Assets`, `Bundle`, `Timer` 
+tags:    
+`Xcode`, `Storyboard`, `UIKit`, `UILabel`, `UIButton`, `UISlider`, `AVFoundation`, `AVAudioPlayer`, `Auto Layout`, `Design Pattern`, `Model-View-Controller Pattern`, `MVC`, `IBOutlet`, `IBAction`, `Assets`, `Bundle`, `Timer` 
 
+---
 
 ### [2-SignUp](https://github.com/san-ghun/boostc-ios/tree/main/2-SignUp)
 
@@ -21,16 +23,26 @@ tags: `Xcode`, `Storyboard`, `UIKit`, `UILabel`, `UIButton`, `UISlider`, `AVFoun
 
 Build a basic sign up process interface application with navigation interface and modal.
 
-tags: `Design Patterns`, `Delegation Pattern`, `Singleton`, `Target-Action`, `View Transition`, `Navigation Interface`, `Modality`, `UIKit`, `UITextField`, `UIDatePicker`, `UIStackView`, `UIImagePickerController`, `UINavigationController`, `UIGestureRecognizer`, `View Controller States Methods`, `Foundation`, `DateFormatter`, `Dictionary`, `guard` 
+tags:    
+`Design Patterns`, `Delegation Pattern`, `Singleton`, `Target-Action`, `View Transition`, `Navigation Interface`, `Modality`, `UIKit`, `UITextField`, `UIDatePicker`, `UIStackView`, `UIImagePickerController`, `UINavigationController`, `UIGestureRecognizer`, `View Controller States Methods`, `Foundation`, `DateFormatter`, `Dictionary`, `guard` 
 
+---
 
 ### 3-Weather
 
+- Weather-demo
 
+Build a basic weather application that process JSON data to show weather condition, using navigation controller and table view.
+
+tags:   
+`UIKit`, `UITableView`, `UITableViewCell`, `View Reuse`, `Table View Cell Customize`, `Codable`, `JSONDecoder`, `Design Patterns`, `Delegation Pattern`, `View Transition`, `Navigation Interface` 
+
+---
 
 ### 4-Album
 
 
+---
 
 ### 5-BoxOffice
 
