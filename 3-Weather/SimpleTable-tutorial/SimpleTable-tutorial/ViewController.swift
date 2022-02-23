@@ -26,7 +26,9 @@ class ViewController: UIViewController {
     @IBAction func touchUpAddButton(_ sender: UIButton) {
         dates.append(Date())
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
+        
+        self.tableView.reloadSections(IndexSet(2...2), with: UITableView.RowAnimation.automatic)
     }
     
     override func viewDidLoad() {
