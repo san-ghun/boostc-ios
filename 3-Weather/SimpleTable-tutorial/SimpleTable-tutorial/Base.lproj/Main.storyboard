@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MBe-qX-48m">
-                                    <rect key="frame" x="0.0" y="111" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="154" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Add Data"/>
@@ -45,6 +45,40 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="wsK-UR-nNU" customClass="CustomTableViewCell" customModule="SimpleTable_tutorial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wsK-UR-nNU" id="Wis-0t-51g">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK8-mP-iyd">
+                                                    <rect key="frame" x="352" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-K6-MMP">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ygO-K6-MMP" firstAttribute="leading" secondItem="Wis-0t-51g" secondAttribute="leadingMargin" id="45x-Db-kGP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vK8-mP-iyd" secondAttribute="bottom" id="4ql-qk-ohv"/>
+                                                <constraint firstItem="vK8-mP-iyd" firstAttribute="trailing" secondItem="Wis-0t-51g" secondAttribute="trailingMargin" id="CDd-ba-dg7"/>
+                                                <constraint firstItem="ygO-K6-MMP" firstAttribute="top" secondItem="Wis-0t-51g" secondAttribute="topMargin" id="SKa-TL-tSt"/>
+                                                <constraint firstItem="vK8-mP-iyd" firstAttribute="top" secondItem="Wis-0t-51g" secondAttribute="topMargin" id="UqJ-Lx-v0w"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ygO-K6-MMP" secondAttribute="bottom" id="swa-so-yWX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="ygO-K6-MMP" id="crG-dA-Azo"/>
+                                            <outlet property="rightLabel" destination="vK8-mP-iyd" id="IOb-6s-mRs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
