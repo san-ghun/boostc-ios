@@ -15,8 +15,8 @@
 		BD3F8DD527C67B7E00BEB1C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F8DD327C67B7E00BEB1C7 /* LaunchScreen.storyboard */; };
 		BD3F8DDD27C72FD900BEB1C7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DDC27C72FD900BEB1C7 /* SecondViewController.swift */; };
 		BD3F8DE127C72FF900BEB1C7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DE027C72FF900BEB1C7 /* ThirdViewController.swift */; };
-		BD3F8DE327C7308700BEB1C7 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DE227C7308700BEB1C7 /* FirstTableViewCell.swift */; };
-		BD3F8DE527C7309700BEB1C7 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DE427C7309700BEB1C7 /* SecondTableViewCell.swift */; };
+		BD3F8DE927C7406100BEB1C7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DE827C7406100BEB1C7 /* Country.swift */; };
+		BD3F8DEB27C7409C00BEB1C7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F8DEA27C7409C00BEB1C7 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		BD3F8DD627C67B7E00BEB1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD3F8DDC27C72FD900BEB1C7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BD3F8DE027C72FF900BEB1C7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		BD3F8DE227C7308700BEB1C7 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
-		BD3F8DE427C7309700BEB1C7 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		BD3F8DE827C7406100BEB1C7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		BD3F8DEA27C7409C00BEB1C7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +70,11 @@
 				BD3F8DDC27C72FD900BEB1C7 /* SecondViewController.swift */,
 				BD3F8DE027C72FF900BEB1C7 /* ThirdViewController.swift */,
 				BD3F8DCE27C67B7C00BEB1C7 /* Main.storyboard */,
-				BD3F8DE227C7308700BEB1C7 /* FirstTableViewCell.swift */,
-				BD3F8DE427C7309700BEB1C7 /* SecondTableViewCell.swift */,
 				BD3F8DD127C67B7E00BEB1C7 /* Assets.xcassets */,
 				BD3F8DD327C67B7E00BEB1C7 /* LaunchScreen.storyboard */,
 				BD3F8DD627C67B7E00BEB1C7 /* Info.plist */,
+				BD3F8DE827C7406100BEB1C7 /* Country.swift */,
+				BD3F8DEA27C7409C00BEB1C7 /* City.swift */,
 			);
 			path = "Weather-demo";
 			sourceTree = "<group>";
@@ -150,12 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD3F8DE327C7308700BEB1C7 /* FirstTableViewCell.swift in Sources */,
 				BD3F8DDD27C72FD900BEB1C7 /* SecondViewController.swift in Sources */,
+				BD3F8DEB27C7409C00BEB1C7 /* City.swift in Sources */,
 				BD3F8DCD27C67B7C00BEB1C7 /* FirstViewController.swift in Sources */,
 				BD3F8DE127C72FF900BEB1C7 /* ThirdViewController.swift in Sources */,
+				BD3F8DE927C7406100BEB1C7 /* Country.swift in Sources */,
 				BD3F8DC927C67B7C00BEB1C7 /* AppDelegate.swift in Sources */,
-				BD3F8DE527C7309700BEB1C7 /* SecondTableViewCell.swift in Sources */,
 				BD3F8DCB27C67B7C00BEB1C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
