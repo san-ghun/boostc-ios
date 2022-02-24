@@ -10,6 +10,8 @@ import UIKit
 class SecondViewController: UIViewController {
 
     // MARK: - Properties
+    var country: Country?
+    var assetTarget: String?
     
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +25,14 @@ class SecondViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.assetTarget = self.country?.assetName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = self.country?.koreanName
     }
     
     /*
@@ -48,11 +58,15 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell: UITableViewCell = UITableViewCell()
+        
+        return cell
     }
     
     
