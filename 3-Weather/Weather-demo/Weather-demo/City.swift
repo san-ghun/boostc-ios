@@ -26,4 +26,24 @@ struct City: Codable {
         case cityName = "city_name"
         case rainfallProbability = "rainfall_probability"
     }
+    
+    var fahrenheit: Double {
+        let input = self.celsius * 9/5 + 32
+        return round(input * 10) / 10
+    }
+    
+    var stateImage: String {
+        switch self.state {
+        case 10:
+            return "sunny"
+        case 11:
+            return "cloudy"
+        case 12:
+            return "rainy"
+        case 13:
+            return "snowy"
+        default:
+            return "sunny"
+        }
+    }
 }
