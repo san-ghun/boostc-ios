@@ -47,6 +47,10 @@ class SecondViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        guard let nextVC: ThirdViewController = segue.destination as? ThirdViewController else { return }
+        
+        nextVC.city = self.cities[tableView.indexPathForSelectedRow!.row]
     }
 
     // MARK: - Methods
