@@ -46,4 +46,19 @@ struct City: Codable {
             return "sunny"
         }
     }
+    
+    var stateString: String {
+        switch self.state {
+        case 10:
+            return "맑음"
+        case 11:
+            return "구름"
+        case 12:
+            return "비"
+        case 13:
+            return "눈"
+        default:
+            return "sunny"
+        }
+    }
 }
