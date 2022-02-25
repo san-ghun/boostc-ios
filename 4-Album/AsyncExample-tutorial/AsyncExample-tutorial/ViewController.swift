@@ -29,10 +29,15 @@ class ViewController: UIViewController {
         
         guard let imageURL: URL = URL(string: "https://www.itl.cat/pngfile/big/292-2920819_large-madeira-portugal-hd.jpg") else { return }
         
-        let imageData: Data = try! Data.init(contentsOf: imageURL)
-        guard let image: UIImage = UIImage(data: imageData) else { return }
+        OperationQueue().addOperation {
+            let imageData: Data = try! Data.init(contentsOf: imageURL)
+            guard let image: UIImage = UIImage(data: imageData) else { return }
+            
+            OperationQueue.main.addOperation {
+                self.imageView.image = image
+            }
+        }
         
-        self.imageView.image = image
     }
 }
 
