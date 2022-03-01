@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotosExample_tutorial" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hjq-BW-J2t">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="xsX-27-xRN" style="IBUITableViewCellStyleDefault" id="976-ul-x09">
@@ -52,7 +52,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hjq-BW-J2t" secondAttribute="trailing" id="mWn-dD-iv5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oBi-Ag-v5c"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="QZf-98-cOT"/>
+                        <barButtonItem title="Item" id="ifm-dL-xYA"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Photos" id="0rd-J3-8wH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1FO-KQ-9m1">
+                            <connections>
+                                <action selector="touchUpRefreshButton:" destination="BYZ-38-t0r" id="ooZ-t4-cvZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Hjq-BW-J2t" id="tSp-lT-kaO"/>
                     </connections>
@@ -70,10 +81,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-HG-s9F">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2BL-ig-iaS">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -95,7 +106,15 @@
                             <constraint firstItem="oFz-HG-s9F" firstAttribute="top" secondItem="K2A-Oo-XRZ" secondAttribute="top" id="tWx-SX-a05"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="refresh" id="7Oj-OL-g3f">
+                            <connections>
+                                <action selector="touchUpRefreshButton:" destination="Ltc-8A-Bal" id="cS6-2F-FNg"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="ibm-KK-Y5v"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="2BL-ig-iaS" id="IUy-Si-OIH"/>
                         <outlet property="scrollView" destination="oFz-HG-s9F" id="2H3-Ys-Tr7"/>
@@ -108,13 +127,17 @@
         <!--Navigation Controller-->
         <scene sceneID="XuY-hI-2vX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jeb-2u-Uls" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Jeb-2u-Uls" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KVX-sq-Wr0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H6f-v1-UsN">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="17t-tB-dD1"/>
                     </connections>

@@ -50,5 +50,8 @@ class ImageZoomViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK: IBActions
+    @IBAction func touchUpRefreshButton(_ sender: Any) {
+        self.scrollView.setZoomScale(1.0, animated: true)
+    }
     
 }

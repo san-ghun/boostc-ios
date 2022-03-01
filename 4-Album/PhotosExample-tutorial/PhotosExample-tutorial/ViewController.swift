@@ -97,7 +97,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // MARK: IBActions
-
+    @IBAction func touchUpRefreshButton(_ sender: Any) {
+        self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fetchResult?.count ?? 0
