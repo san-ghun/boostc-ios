@@ -64,6 +64,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         PHPhotoLibrary.shared().register(self)
     }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        guard let nextVC: ImageZoomViewController = segue.destination as? ImageZoomViewController else { return }
+        
+        guard let cell: UITableViewCell = sender as? UITableViewCell else { return }
+        
+        guard let index: IndexPath = self.tableView.indexPath(for: cell) else { return }
+        
+        nextVC.asset = self.fetchResult[index.row]
+    }
 
     // MARK: - Methods
     
@@ -81,7 +97,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // MARK: IBActions
-
+    @IBAction func touchUpRefreshButton(_ sender: Any) {
+        self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+    }
+    
     // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fetchResult?.count ?? 0
