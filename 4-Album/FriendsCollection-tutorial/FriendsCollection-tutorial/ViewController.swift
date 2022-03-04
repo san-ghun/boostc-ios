@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.collectionView.dataSource = self
+        self.collectionView.delegate = self
     }
 
 
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.numberOfCell
@@ -44,5 +45,12 @@ extension ViewController: UICollectionViewDataSource {
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath)
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.numberOfCell += 1
+        collectionView.reloadData()
     }
 }
