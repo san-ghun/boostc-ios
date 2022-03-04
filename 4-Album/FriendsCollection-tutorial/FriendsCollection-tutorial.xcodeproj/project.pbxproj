@@ -13,6 +13,8 @@
 		BD05225027D1ECA7006C5AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD05224E27D1ECA7006C5AF7 /* Main.storyboard */; };
 		BD05225227D1ECA9006C5AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD05225127D1ECA9006C5AF7 /* Assets.xcassets */; };
 		BD05225527D1ECA9006C5AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD05225327D1ECA9006C5AF7 /* LaunchScreen.storyboard */; };
+		BD05225D27D1F298006C5AF7 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD05225C27D1F298006C5AF7 /* FriendCollectionViewCell.swift */; };
+		BD05225F27D1F356006C5AF7 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD05225E27D1F356006C5AF7 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BD05225127D1ECA9006C5AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD05225427D1ECA9006C5AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD05225627D1ECA9006C5AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD05225C27D1F298006C5AF7 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD05225E27D1F356006C5AF7 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				BD05224827D1ECA7006C5AF7 /* AppDelegate.swift */,
 				BD05224A27D1ECA7006C5AF7 /* SceneDelegate.swift */,
 				BD05224C27D1ECA7006C5AF7 /* ViewController.swift */,
+				BD05225E27D1F356006C5AF7 /* Friend.swift */,
 				BD05224E27D1ECA7006C5AF7 /* Main.storyboard */,
+				BD05225C27D1F298006C5AF7 /* FriendCollectionViewCell.swift */,
 				BD05225127D1ECA9006C5AF7 /* Assets.xcassets */,
 				BD05225327D1ECA9006C5AF7 /* LaunchScreen.storyboard */,
 				BD05225627D1ECA9006C5AF7 /* Info.plist */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD05225D27D1F298006C5AF7 /* FriendCollectionViewCell.swift in Sources */,
 				BD05224D27D1ECA7006C5AF7 /* ViewController.swift in Sources */,
+				BD05225F27D1F356006C5AF7 /* Friend.swift in Sources */,
 				BD05224927D1ECA7006C5AF7 /* AppDelegate.swift in Sources */,
 				BD05224B27D1ECA7006C5AF7 /* SceneDelegate.swift in Sources */,
 			);
