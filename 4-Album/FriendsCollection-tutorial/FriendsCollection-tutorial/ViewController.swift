@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // TODO: Correct and Fix the layout and presentation of CollectionView
+    // TODO: Apply UIActivityViewController to share the data
+    
     // MARK: - Properties
     var friends: [Friend] = []
     let cellIdentifier: String = "cell"
@@ -24,6 +27,19 @@ class ViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
+        // UICollectionViewFlowLayout
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.minimumLineSpacing = 10
+        
+        let halfWidth: CGFloat = UIScreen.main.bounds.width / 2.0
+        
+        flowLayout.estimatedItemSize = CGSize(width: halfWidth - 30, height: 90)
+        
+        self.collectionView.collectionViewLayout = flowLayout
+        
+        // JSON Decoder
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset = NSDataAsset(name: "friends") else { return }
         
