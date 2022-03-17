@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action: UIAlertAction) in
             print("OK pressed")
+            
             guard let text = alertController.textFields?.first?.text else { return }
             print("Report \(text)")
         }
@@ -51,10 +52,11 @@ class ViewController: UIViewController {
         alertController.addAction(someAction)
         alertController.addAction(anotherAction)
         
-        
-        alertController.addTextField { (field: UITextField) in
-            field.placeholder = "플레이스 홀더"
-            field.textColor = UIColor.red
+        if style == UIAlertController.Style.alert {
+            alertController.addTextField { (field: UITextField) in
+                field.placeholder = "플레이스 홀더"
+                field.textColor = UIColor.red
+            }
         }
         
         self.present(alertController, animated: true, completion: {
