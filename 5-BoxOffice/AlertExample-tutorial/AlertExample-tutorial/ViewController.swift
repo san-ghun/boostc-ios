@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action: UIAlertAction) in
             print("OK pressed")
+            guard let text = alertController.textFields?.first?.text else { return }
+            print("Report \(text)")
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
