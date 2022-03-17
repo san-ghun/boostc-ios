@@ -28,14 +28,27 @@ class ViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: style)
         
+        
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action: UIAlertAction) in
             print("OK pressed")
         }
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
+        
+        
+        let handler: (UIAlertAction) -> Void
+        handler = { (action: UIAlertAction) in
+            print("action pressed \(action.title ?? "")")
+        }
+        
+        let someAction = UIAlertAction(title: "Some", style: UIAlertAction.Style.destructive, handler: handler)
+        let anotherAction = UIAlertAction(title: "Another", style: UIAlertAction.Style.default, handler: handler)
+        
+        alertController.addAction(someAction)
+        alertController.addAction(anotherAction)
+        
         
         self.present(alertController, animated: true, completion: {
             print("Alert Controller shown")
