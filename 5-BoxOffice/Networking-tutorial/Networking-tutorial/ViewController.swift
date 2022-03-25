@@ -43,8 +43,11 @@ class ViewController: UIViewController {
             do {
                 let apiResponse: APIResponse = try JSONDecoder().decode(APIResponse.self, from: data)
                 self.friends = apiResponse.results
-                // TODO: let tableView reload on main thread
-                self.tableView.reloadData()
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
             } catch(let err) {
                 print(err.localizedDescription)
             }
@@ -72,10 +75,38 @@ extension ViewController: UITableViewDataSource {
         var content = cell.defaultContentConfiguration()
         content.text = friend.name.full
         content.secondaryText = friend.email
+//        content.image = nil
         
-        guard let imageURL: URL = URL(string: friend.picture.thumbnail) else { return cell }
-        guard let imageData: Data = try? Data(contentsOf: imageURL) else { return cell }
+        guard let imageURL: URL = URL(string: friend.picture.thumbnail) else {
+            return cell
+        }
+        guard let imageData: Data = try? Data(contentsOf: imageURL) else {
+            return cell
+        }
         content.image = UIImage(data: imageData)
+        
+        // TODO: resolve image loading process to async way
+//        DispatchQueue.global().async {
+//            guard let imageURL: URL = URL(string: friend.picture.thumbnail) else {
+//                return
+//            }
+//            guard let imageData: Data = try? Data(contentsOf: imageURL) else {
+//                return
+//            }
+//
+//            content.image = UIImage(data: imageData)
+//
+//            DispatchQueue.main.async {
+//
+//                if let index: IndexPath = tableView.indexPath(for: cell) {
+//                    if index.row == indexPath.row {
+//                        content.image = UIImage(data: imageData)
+//                    }
+//                }
+//            }
+//        }
+        
+        cell.contentConfiguration = content
         
         return cell
     }
