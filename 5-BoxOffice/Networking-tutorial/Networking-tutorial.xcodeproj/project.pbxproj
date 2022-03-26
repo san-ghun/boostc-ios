@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDA2AE1B27EF566500C1CCD3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA2AE1A27EF566500C1CCD3 /* Request.swift */; };
 		BDCF440927EC769800F2CC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF440827EC769800F2CC61 /* AppDelegate.swift */; };
 		BDCF440B27EC769800F2CC61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF440A27EC769800F2CC61 /* SceneDelegate.swift */; };
 		BDCF440D27EC769800F2CC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF440C27EC769800F2CC61 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BDA2AE1A27EF566500C1CCD3 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		BDCF440527EC769800F2CC61 /* Networking-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Networking-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCF440827EC769800F2CC61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCF440A27EC769800F2CC61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				BDCF440827EC769800F2CC61 /* AppDelegate.swift */,
 				BDCF440A27EC769800F2CC61 /* SceneDelegate.swift */,
 				BDCF440C27EC769800F2CC61 /* ViewController.swift */,
+				BDA2AE1A27EF566500C1CCD3 /* Request.swift */,
 				BDCF441C27EC784300F2CC61 /* Model.swift */,
 				BDCF440E27EC769800F2CC61 /* Main.storyboard */,
 				BDCF441127EC769C00F2CC61 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				BDCF440D27EC769800F2CC61 /* ViewController.swift in Sources */,
 				BDCF440927EC769800F2CC61 /* AppDelegate.swift in Sources */,
+				BDA2AE1B27EF566500C1CCD3 /* Request.swift in Sources */,
 				BDCF440B27EC769800F2CC61 /* SceneDelegate.swift in Sources */,
 				BDCF441D27EC784300F2CC61 /* Model.swift in Sources */,
 			);
