@@ -217,7 +217,7 @@ tags:
 
 - [Weather-demo](https://github.com/san-ghun/boostc-ios/tree/main/3-Weather/Weather-demo)
 - [SimpleTable-tutorial](https://github.com/san-ghun/boostc-ios/tree/main/3-Weather/SimpleTable-tutorial)
-- [CodableWithJSON](https://github.com/san-ghun/boostc-ios/tree/main/3-Weather/CodableWithJSON-tutorial)
+- [CodableWithJSON-tutorial](https://github.com/san-ghun/boostc-ios/tree/main/3-Weather/CodableWithJSON-tutorial)
 
 Build a basic weather application that process JSON data to show weather condition, using navigation controller and table view.
 
@@ -229,6 +229,9 @@ tags:
 ### 4-Album
 
 - Album-demo
+- [PhotosExample-tutorial](https://github.com/san-ghun/boostc-ios/tree/main/4-Album/PhotosExample-tutorial)
+- [AsyncExample-tutorial](https://github.com/san-ghun/boostc-ios/tree/main/4-Album/AsyncExample-tutorial)
+- [FriendsCollection-tutorial](https://github.com/san-ghun/boostc-ios/tree/main/4-Album/FriendsCollection-tutorial)
 
 Build a basic photo album application that show photos in photo library with shape of collection view, using `Photos` Framework.    
 Using collection view, user can select a list of photos and delete photos. Also, user can change the order method of photos. By tapping the photo, user can access new window and able to zoom photo.
@@ -240,6 +243,13 @@ tags:
 
 ### 5-BoxOffice
 
+- BoxOffice-demo
 
+Build a basic data communicating application that request movie data from a server bia API and show the data on screen with collectionView or tableView.     
+User can select a movie from the movie list and be able to access detail information about the movie. User can write and save review of the movie.
 
+tags:     
+`UIKit`, `UIAlertController`, `ActionSheet`, `UITabBarController`, `Foundation`, `URLSession`, `URLSessionDataTask`, `DispatchQueue`, `GCD`, `Notification`, `NotificationCenter`, `UINavigationController`, `Navigation Interface`, `Storyboard Segue`, `Concurrency Programming`, `UITableView`, `UICollectionView`, `Auto Layout`, `Modality`
+
+--- 
 
